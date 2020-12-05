@@ -36,7 +36,7 @@ exports.createUsersNote = (req, res, next) => {
 
   return newNote
     .save()
-    .then((note) => {
+    .then( note => {
       return Users.findByIdAndUpdate(userId, {
         $addToSet: { notes: note._id },
       });

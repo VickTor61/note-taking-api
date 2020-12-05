@@ -4,8 +4,15 @@ const Schema = mongoose.Schema;
 //NOTE SCHEMA
 const NotesSchema = new Schema(
     {
-      title: String,
-      content: String,
+      title: {
+        type: String,
+        required: [true, "specify note title"]
+      },
+
+     content: {
+        type: String,
+        required: [true, "note content can't be empty"]
+      },
       userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", requured: true},
     },
     {

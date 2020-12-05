@@ -24,7 +24,7 @@ exports.findAll = (req, res) => {
       res.send(foundUser);
     })
     .then((err) => {
-      res.status(500).send({
+      res.send({
         message: "user unavailable",
       });
     });

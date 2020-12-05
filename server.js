@@ -20,12 +20,13 @@ app.get("/", (req, res) => {
   });
 });
 
-app.use((err, req, res, next) =>
-  res.status(err.status || 500).render("error", {
-    message: err.message || "Something went wrong!",
-    title: err.title || "Internal Server Error",
-  })
-);
+app.use((err, req, res, next) => {
+  res.status(err.status || 500);
+  res.json({
+    message: err.message,
+    error: err,
+  });
+});
 
 app.listen(3000, () => {
   console.log("Server is listening on port 3000");

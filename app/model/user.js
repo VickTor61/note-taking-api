@@ -4,9 +4,9 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
   {
-    firstName: String,
-    lastName: String,
-    email: String,
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
+    email: { type: String, required: true },
     notes: [
       {
         type: mongoose.Schema.Types.ObjectId,
@@ -18,6 +18,6 @@ const userSchema = new Schema(
     timestamps: true,
   }
 );
-Users =  mongoose.model("User", userSchema);
+Users = mongoose.model("User", userSchema);
 
-module.exports = Users
+module.exports = Users;
