@@ -1,30 +1,30 @@
 # note-taking-api;
 
-//GET ALL USERS
+//// GET ALL USERS
 app.get("/users");
 
-//CREATE A USER
+//// CREATE A USER
 app.post("/users");
 
-//GET A SPECIFIC USER BY NAME
+//// GET A SPECIFIC USER BY NAME
  app.get("/users/:userId");
  
- //UPDATE A SPECIFIC USER
+ //// UPDATE A SPECIFIC USER
   app.patch Or put("/users/:userId");
   
-  //DELETE A SPECIFIC USER
+  //// DELETE A SPECIFIC USER
    app.delete("/users/:userId");
    
-   //NOTES ROUTE
+   //// NOTES ROUTE
    
-   //////GET ALL NOTES
-  app.get("/notes");
+   //// GET ALL NOTES
+ 	 app.get("/notes");
 
-//FIND ONE NOTE
+//// FIND ONE NOTE
   app.get("/notes/:NoteName");
 
-////CREATE A NOTE USING AN EXISTING USERID
+//// CREATE A NOTE USING AN EXISTING USERID
   app.post("/users/:userId/notes");
 
-////GET A USER AND THEIR NOTES
+//// GET A USER AND THEIR NOTES
   app.get("/users/:user_id/notes");
